@@ -1,4 +1,5 @@
 import PracticeFormPage from '../../pages/PracticeFormPage';
+import data from '../../fixtures/practice-form.json';
 
 describe('Practice Form', () => {
 
@@ -10,16 +11,16 @@ describe('Practice Form', () => {
 
     it('Must successfully submit the form when all required fields are filled in', () => {
 
-        PracticeFormPage.fillFirstName('Gabriella')
-        PracticeFormPage.fillLastName('Costa')
-        PracticeFormPage.fillEmail('gabriellacosta@teste.com')
-        PracticeFormPage.selectGender('Female')
-        PracticeFormPage.fillMobileNumber('1234567890')
-        PracticeFormPage.fillDateOfBirth('5', 'November', '1999')
-        PracticeFormPage.selectHobby('Sports')
+        PracticeFormPage.fillFirstName(data.firstName)
+        PracticeFormPage.fillLastName(data.lastName)
+        PracticeFormPage.fillEmail(data.email)
+        PracticeFormPage.selectGender(data.gender)
+        PracticeFormPage.fillMobileNumber(data.mobile)
+        PracticeFormPage.fillDateOfBirth(data.dateOfBirth.day, data.dateOfBirth.month, data.dateOfBirth.year)
+        PracticeFormPage.selectHobby(data.hobby)
         PracticeFormPage.submit()
         PracticeFormPage.assertSubmissionModalVisible();
-        PracticeFormPage.assertModalContains('Student Name', 'Gabriella Costa');
+        PracticeFormPage.assertModalContains('Student Name', `${data.firstName} ${data.lastName}`);
 
     });
 

@@ -1,0 +1,13 @@
+{
+  "firstName": "Gabriella",
+  "lastName": "Costa",
+  "email": "gabriellacosta@teste.com",
+  "gender": "Female",
+  "mobile": "1234567890",
+  "dateOfBirth": {
+    "day": 5,
+    "month": "November",
+    "year": "1999"
+  },
+  "hobby": "Sports"
+}
